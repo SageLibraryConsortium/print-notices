@@ -107,6 +107,7 @@
         <!-- ##### ADDRESS BLOCK ########################################## -->
         <xsl:element name="fo:block">
           <xsl:attribute name="margin-left">4mm</xsl:attribute>
+          <xsl:attribute name="margin-top">38mm</xsl:attribute>
           <xsl:attribute name="margin-bottom"><xsl:choose><xsl:when test="not(patron/addr_street2='')">15mm</xsl:when><xsl:otherwise>20mm</xsl:otherwise></xsl:choose></xsl:attribute>
           <xsl:attribute name="margin-right"><xsl:value-of select="$addr-rmargin"/>mm</xsl:attribute>
           <xsl:attribute name="padding">2mm</xsl:attribute>
