@@ -422,7 +422,7 @@
             <fo:block>
               FINAL NOTICE:  This is your final notice to return the item(s) listed
               below.  You may be blocked from borrowing until this matter is taken care
-              of. Price below plus a reprocessing fee will be charged for each lost item.
+              of.  Price below plus a reprocessing fee of $10 will be charged for each lost item.
               Please contact the owning library immediately.  Thank you.
             </fo:block>
            </xsl:when>
@@ -430,8 +430,8 @@
             <fo:block>
               FINAL NOTICE:  This is your final notice to return the item(s) listed
               below.  You may be blocked from borrowing until this matter is taken care
-              of.  Replacement charges are indicated below.  Please contact the owning 
-              library immediately.  Thank you.
+              of.  Replacement charges are indicated below.  This may also include a processing fee for lost items.
+              Please contact the owning library immediately.  Thank you.
             </fo:block>
           </xsl:otherwise>
         </xsl:choose>
