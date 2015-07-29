@@ -25,7 +25,7 @@
 
 
       <xsl:if test="patron/email = '' and (location/shortname = 'um-mf')">
-        <xsl:if test="@notify_interval = '30 days' or @notify_interval = '60 days'">
+        <xsl:if test="@notify_interval = '30 days' or @notify_interval = '60 days' or @notify_interval = '90 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
@@ -135,18 +135,29 @@
           <!-- Milton Freewater -->
           <xsl:when test="@notify_interval='30 days' and location/shortname='um-mf'">
             <fo:block>
-              FINAL NOTICE: The following Library materials are now assumed lost. You are sent the 
-              following bill(s).  Please return the material(s) or pay the bill.
-               If you feel you have received this notice in error, please call
-              <xsl:value-of select="location/phone"/>. Thank you.
+              The following items are 30 days overdue. Your items are now considered lost, and your account has been charged
+              for the entire cost of the item. Please return the items, or contact the library to make payment arrangements for
+              your bill.
+              If you have not returned your items or made payment arrangements within 60 days, your account will be sent to
+              collections. If you feel that you have received this in error please call us at 541-938-8247 with any questions.
+              Thank you.
             </fo:block>
            </xsl:when>
           <xsl:when test="@notify_interval='60 days' and location/shortname='um-mf'">
             <fo:block>
-              OUTSTANDING BILLS: The following Library materials have been lost for 30 days. You are sent the 
-              following bill(s).  Please return the material(s) or pay the bill.
-               If you feel you have received this notice in error, please call
-              <xsl:value-of select="location/phone"/>. Thank you.
+              The following items are 60 days overdue. Your items are considered lost, and your account has been charged for
+              the entire cost of the book. Please return the items or contact the library to make payment arrangements.
+              If you have not returned your items or made payment arrangements within 30 days of this letter your account will
+              be sent to collections. If you feel that you have received this in error please call us at 541-938-8247 with any
+              questions.
+              Thank you.
+            </fo:block>
+           </xsl:when>
+          <xsl:when test="@notify_interval='90 days' and location/shortname='um-mf'">
+            <fo:block>
+              The following items are now 90 days overdue. If you do not return the items, or contact the library to make
+              payment arrangements your account will be sent to collections within ten days of this letter. 
+              If you feel that you have received this in error please call us at 541-938-8247 with any questions. Thank you.
             </fo:block>
            </xsl:when>
           <!-- Hood River Valley High School -->
