@@ -25,7 +25,7 @@
 
 
       <xsl:if test="patron/email = '' and (location/shortname = 'um-mf')">
-        <xsl:if test="@notify_interval = '30 days' or @notify_interval = '60 days' or @notify_interval = '90 days'">
+        <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days' or @notify_interval = '30 days' or @notify_interval = '60 days' or @notify_interval = '90 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
@@ -356,14 +356,14 @@
           </xsl:when>
           <xsl:when test="@notify_interval='7 days'">
             <fo:block>
-              FIRST NOTICE:  Library records show the following item(s) overdue.
+              FIRST NOTICE (1 week overdue):  Library records show the following item(s) overdue.
               Please return or renew them as soon as possible to avoid further charges.
               If you have already returned them, please excuse this notice.  Thank you.
             </fo:block>
           </xsl:when>
           <xsl:when test="@notify_interval='14 days'">
             <fo:block>
-              SECOND NOTICE:  Library records still show the following item(s) overdue.
+              SECOND NOTICE (2 weeks overdue):  Library records still show the following item(s) overdue.
               Please return them as soon as possible to avoid being billed for replacement costs. 
               Thank you.
             </fo:block>
@@ -439,7 +439,7 @@
            </xsl:when>
           <xsl:otherwise>
             <fo:block>
-              FINAL NOTICE:  This is your final notice to return the item(s) listed
+              FINAL NOTICE (3 weeks overdue):  This is your final notice to return the item(s) listed
               below.  You may be blocked from borrowing until this matter is taken care
               of.  Replacement charges are indicated below.  This may also include a processing fee for lost items.
               Please contact the owning library immediately.  Thank you.
