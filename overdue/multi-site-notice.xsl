@@ -133,6 +133,33 @@
         <!-- ##### VARIABLE LATENESS MESSAGE ######################### -->
         <xsl:choose>
           <!-- Milton Freewater -->
+          <xsl:when test="@notify_interval='7 days' and location/shortname='um-mf'">
+            <fo:block>
+              The following items are 7 days overdue. Please return the items, or contact the library to make payment arrangements for
+              your bill. After 30 days, your items will be marked lost and you will be billed for the cost of the item.
+              If you have not returned your items or made payment arrangements within 60 days, your account will be sent to
+              collections. If you feel that you have received this in error please call us at 541-938-8247 with any questions.
+              Thank you.
+            </fo:block>
+           </xsl:when>
+          <xsl:when test="@notify_interval='14 days' and location/shortname='um-mf'">
+            <fo:block>
+              The following items are 14 days overdue. Please return the items, or contact the library to make payment arrangements for
+              your bill. After 30 days, your items will be marked lost and you will be billed for the cost of the item.
+              If you have not returned your items or made payment arrangements within 60 days, your account will be sent to
+              collections. If you feel that you have received this in error please call us at 541-938-8247 with any questions.
+              Thank you.
+            </fo:block>
+           </xsl:when>
+          <xsl:when test="@notify_interval='21 days' and location/shortname='um-mf'">
+            <fo:block>
+              The following items are 21 days overdue. Please return the items, or contact the library to make payment arrangements for
+              your bill. After 30 days, your items will be marked lost and you will be billed for the cost of the item.
+              If you have not returned your items or made payment arrangements within 60 days, your account will be sent to
+              collections. If you feel that you have received this in error please call us at 541-938-8247 with any questions.
+              Thank you.
+            </fo:block>
+           </xsl:when>
           <xsl:when test="@notify_interval='30 days' and location/shortname='um-mf'">
             <fo:block>
               The following items are 30 days overdue. Your items are now considered lost, and your account has been charged
