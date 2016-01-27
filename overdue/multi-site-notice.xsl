@@ -579,7 +579,16 @@
             <fo:table-row margin-left="3mm">
               <fo:table-cell><fo:block>Email</fo:block></fo:table-cell>
               <fo:table-cell font-family="Courier">
+                   <!-- Pendleton Custom Footer -->
+                    <xsl:choose>
+                    <xsl:when test="location/shortname='um-pen'">
+                        <fo:block>maura.odaniel@ci.pendleton.or.us</fo:block>
+                    </xsl:when>
+                    <!-- Default Footer -->
+               <xsl:otherwise>
                 <fo:block><xsl:value-of select="location/email"/></fo:block>
+               </xsl:otherwise>
+                    </xsl:choose>
               </fo:table-cell>
             </fo:table-row>
           </fo:table-body>
