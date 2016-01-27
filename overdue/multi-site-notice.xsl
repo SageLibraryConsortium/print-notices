@@ -24,7 +24,7 @@
     <xsl:if test="location/name[contains(text(), $lid)]"> 
 
 
-      <xsl:if test="patron/email = '' and (location/shortname = 'um-mf')">
+      <xsl:if test="(location/shortname = 'um-mf')">
         <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days' or @notify_interval = '30 days' or @notify_interval = '60 days' or @notify_interval = '90 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
@@ -579,7 +579,7 @@
             <fo:table-row margin-left="3mm">
               <fo:table-cell><fo:block>Email</fo:block></fo:table-cell>
               <fo:table-cell font-family="Courier">
-                <fo:block>&lt;<xsl:value-of select="location/email"/>&gt;</fo:block>
+                <fo:block><xsl:value-of select="location/email"/></fo:block>
               </fo:table-cell>
             </fo:table-row>
           </fo:table-body>
