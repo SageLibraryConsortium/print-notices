@@ -135,56 +135,73 @@
           <!-- Milton Freewater -->
           <xsl:when test="@notify_interval='7 days' and location/shortname='um-mf'">
             <fo:block>
-              The following items are 7 days overdue. Please return the items, or contact the library to make payment arrangements for
-              your bill. After 30 days, your items will be marked lost and you will be billed for the cost of the item.
-              If you have not returned your items or made payment arrangements within 60 days, your account will be sent to
-              collections. If you feel that you have received this in error please call us at 541-938-8247 with any questions.
+              The following items are 7 days overdue. Please return the items, or contact the
+              library to make payment arrangements for your bill. After 30 days, your items will be
+              marked lost and you will be billed for the cost of the item.
+              If you have not returned your items or made payment arrangements within 60 days, your
+              account will be sent to collections. If you feel that you have received this in error
+              please call us at 541-938-8247 with any questions.
+              
               Thank you.
             </fo:block>
            </xsl:when>
           <xsl:when test="@notify_interval='14 days' and location/shortname='um-mf'">
             <fo:block>
-              The following items are 14 days overdue. Please return the items, or contact the library to make payment arrangements for
-              your bill. After 30 days, your items will be marked lost and you will be billed for the cost of the item.
-              If you have not returned your items or made payment arrangements within 60 days, your account will be sent to
-              collections. If you feel that you have received this in error please call us at 541-938-8247 with any questions.
+              The following items are 14 days overdue. Please return the items, or contact the
+              library to make payment arrangements for your bill. After 30 days, your items will be
+              marked lost and you will be billed for the cost of the item.
+              If you have not returned your items or made payment arrangements within 60 days, your
+              account will be sent to collections. If you feel that you have received this in error
+              please call us at 541-938-8247 with any questions.
+              
               Thank you.
             </fo:block>
            </xsl:when>
           <xsl:when test="@notify_interval='21 days' and location/shortname='um-mf'">
             <fo:block>
-              The following items are 21 days overdue. Please return the items, or contact the library to make payment arrangements for
-              your bill. After 30 days, your items will be marked lost and you will be billed for the cost of the item.
-              If you have not returned your items or made payment arrangements within 60 days, your account will be sent to
-              collections. If you feel that you have received this in error please call us at 541-938-8247 with any questions.
+              The following items are 7 days overdue. Please return the items, or contact the
+              library to make payment arrangements for your bill. After 30 days, your items will be
+              marked lost and you will be billed for the cost of the item.
+              If you have not returned your items or made payment arrangements within 60 days, your
+              account will be sent to collections. If you feel that you have received this in error
+              please call us at 541-938-8247 with any questions.
+              
               Thank you.
             </fo:block>
            </xsl:when>
           <xsl:when test="@notify_interval='30 days' and location/shortname='um-mf'">
             <fo:block>
-              The following items are 30 days overdue. Your items are now considered lost, and your account has been charged
-              for the entire cost of the item. Please return the items, or contact the library to make payment arrangements for
-              your bill.
-              If you have not returned your items or made payment arrangements within 60 days, your account will be sent to
-              collections. If you feel that you have received this in error please call us at 541-938-8247 with any questions.
+              The following items are 30 days overdue. Your items are now considered lost, and
+              your account has been charged for the entire cost of the item. Please return the items,
+              or contact the library to make payment arrangements for your bill.
+              If you have not returned your items or made payment arrangements within 60 days, your
+              account will be sent to collections. If you feel that you have received this in error
+              please call us at 541-938-8247 with any questions.
+              
               Thank you.
             </fo:block>
            </xsl:when>
           <xsl:when test="@notify_interval='60 days' and location/shortname='um-mf'">
             <fo:block>
-              The following items are 60 days overdue. Your items are considered lost, and your account has been charged for
-              the entire cost of the book. Please return the items or contact the library to make payment arrangements.
-              If you have not returned your items or made payment arrangements within 30 days of this letter your account will
-              be sent to collections. If you feel that you have received this in error please call us at 541-938-8247 with any
-              questions.
+              The following items are 60 days overdue. Your items are considered lost, and your
+              account has been charged forthe entire cost of the book. Please return the items or
+              contact the library to make payment arrangements.
+              If you have not returned your items or made payment arrangements within 30 days of this
+              letter your account will be sent to collections. If you feel that you have received this
+              in error please call us at 541-938-8247 with any questions.
+              
               Thank you.
             </fo:block>
            </xsl:when>
           <xsl:when test="@notify_interval='90 days' and location/shortname='um-mf'">
             <fo:block>
-              The following items are now 90 days overdue. If you do not return the items, or contact the library to make
-              payment arrangements your account will be sent to collections within ten days of this letter. 
-              If you feel that you have received this in error please call us at 541-938-8247 with any questions. Thank you.
+              The following items are now 90 days overdue. If you do not return the items, or
+              contact the library to make payment arrangements your account will be sent to
+              collections within ten days of this letter. 
+              If you feel that you have received this in error please call us at 541-938-8247
+              with any questions.
+
+              Thank you.
             </fo:block>
            </xsl:when>
           <!-- Hood River Valley High School -->
