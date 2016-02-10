@@ -367,17 +367,20 @@
             <xsl:choose>
               <xsl:when test="@notify_interval = '7 days'">
                 <fo:block>
-                  Library records show the above item(s) overdue. If you have returned them, please excuse this notice.
+                  Library records show the above item(s) overdue. If you have returned them, please excuse
+                  this notice.
                 </fo:block>
                 <fo:block margin-top="5mm">
-                  To renew, call: Hood River 541-386-2535, Parkdale 541-352-6502, Cascade Locks 541-374-9317 or go to: 
-                  www.hoodriverlibrary.org, click on "My Account" and enter in the 14 digits of your library card number
-                  (put in no spaces). Your PIN is usually the last 4 digits of your phone number.
+                  To renew, call: Hood River 541-386-2535, Parkdale 541-352-6502, Cascade Locks 541-374-9317
+                  or go to: www.hoodriverlibrary.org, click on "My Account" and enter in the 14 digits of
+                  your library card number (put in no spaces). Your PIN is usually the last 4 digits
+                  of your phone number.
                 </fo:block>
               </xsl:when>
               <xsl:when test="@notify_interval = '30 days'">
                 <fo:block>
-                  Library records show the above item(s) are very overdue. Please return the items to avoid being billed for their replacement.
+                  Library records show the above item(s) are very overdue. Please return the items to avoid
+                  being billed for their replacement.
                 </fo:block>
               </xsl:when>
               <xsl:when test="@notify_interval = '60 days'">
@@ -485,7 +488,8 @@
             <fo:block>
               FINAL NOTICE (3 weeks overdue):  This is your final notice to return the item(s) listed
               below.  You may be blocked from borrowing until this matter is taken care
-              of.  Replacement charges are indicated below.  This may also include a processing fee for lost items.
+              of.  Replacement charges are indicated below.  This may also include a processing fee for
+              lost items.
               Please contact the owning library immediately.  Thank you.
             </fo:block>
           </xsl:otherwise>
@@ -573,7 +577,7 @@
           <fo:table-body>
             <fo:table-row margin-left="3mm">
               <fo:table-cell><fo:block>Address</fo:block></fo:table-cell>
-              <fo:table-cell>
+              <fo:table-cell font-family="Courier">
                 <fo:block>
                   <xsl:value-of select="location/addr_street1"/>
                 </fo:block>
