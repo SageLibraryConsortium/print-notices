@@ -23,7 +23,7 @@
   <xsl:template match="notice">
     <xsl:if test="location/name[contains(text(), $lid)]"> 
 
-
+     <!--Milton Freewater Gets Notices For Email/No Email Patrons -->
       <xsl:if test="(location/shortname = 'um-mf')">
         <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days' or @notify_interval = '30 days' or @notify_interval = '60 days' or @notify_interval = '90 days'">
           <xsl:call-template name="notice_template"/>
