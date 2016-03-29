@@ -484,6 +484,14 @@
               Please contact the owning library immediately.  Thank you.
             </fo:block>
            </xsl:when>
+           <xsl:when test="@notify_interval='21 days' and $lid = 'Hines Middle'">
+            <fo:block>
+              FINAL NOTICE (Items Marked Lost):  Your item(s) listed below have now been
+              marked LOST. You may be blocked from borrowing until this matter is taken care
+              of. Price below plus a reprocessing fee of $10 will be charged for each lost item.
+              Please contact the Hines Middle School Library immediately.  Thank you.
+            </fo:block>
+           </xsl:when>
           <xsl:otherwise>
             <fo:block>
               FINAL NOTICE (3 weeks overdue):  This is your final notice to return the item(s) listed
