@@ -488,7 +488,7 @@
             <fo:block>
               FINAL NOTICE (Items Marked Lost):  Your item(s) listed below have now been
               marked LOST. You may be blocked from borrowing until this matter is taken care
-              of. Price below plus a reprocessing fee of $10 will be charged for each lost item.
+              of. The price below will be charged for each lost item.
               Please contact the Hines Middle School Library immediately.  Thank you.
             </fo:block>
            </xsl:when>
