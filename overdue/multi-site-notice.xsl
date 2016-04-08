@@ -361,6 +361,36 @@
               Please pay the amount indicated for each lost item at the School Office.
             </fo:block>
           </xsl:when>
+          <!-- Hines Middle School -->
+          <xsl:when test="@notify_interval='7 days' and $lid = 'Hines Middle'">
+            <fo:block>
+              FIRST NOTICE (Items Overdue):  Library records show the following item(s) overdue.
+              Please return or renew them as soon as possible. There are no fines charged.
+              If the book has been misplaced, the replacement cost is listed below and will need to be paid.
+              If you have already returned them, please excuse this notice.
+              Contact Amanda Beaubian at the Hines Middle School Library if you have questions or concerns.
+              Thank you.
+            </fo:block>
+           </xsl:when>
+          <xsl:when test="@notify_interval='14 days' and $lid = 'Hines Middle'">
+            <fo:block>
+              SECOND NOTICE (Items still overdue): Library records show the following item(s) remain overdue.
+              Please return or renew them as soon as possible. There are no fines charged.
+              If the book has been misplaced, the replacement cost is listed below and will need to be paid.
+              If you have already returned them, please excuse this notice.
+              Contact Amanda Beaubian at the Hines Middle School Library if you have questions or concerns.
+              Thank you.
+            </fo:block>
+           </xsl:when>
+           <xsl:when test="@notify_interval='21 days' and $lid = 'Hines Middle'">
+            <fo:block>
+              FINAL NOTICE (Items Marked Lost):  Your item(s) listed below have now been
+              marked LOST. You may be blocked from borrowing until this matter is taken care
+              of. The price below will be charged for each lost item.
+              Please contact Amanda Beaubian at the Hines Middle School Library immediately.
+              Thank you.
+            </fo:block>
+           </xsl:when>
           <!-- Hood River County Library District -->
           <!-- Note: this block has a different structure. -->
           <xsl:when test="location/shortname = 'hr-hrcl' or location/shortname = 'hr-pcl' or location/shortname = 'hr-cll'">
@@ -484,37 +514,6 @@
               Please contact the owning library immediately.  Thank you.
             </fo:block>
            </xsl:when>
-          <!-- Hines Middle School -->
-          <xsl:when test="@notify_interval='7 days' and $lid = 'Hines Middle'">
-            <fo:block>
-              FIRST NOTICE (Items Overdue):  Library records show the following item(s) overdue.
-              Please return or renew them as soon as possible. There are no fines charged.
-              If the book has been misplaced, the replacement cost is listed below and will need to be paid.
-              If you have already returned them, please excuse this notice.
-              Contact Amanda Beaubian at the Hines Middle School Library if you have questions or concerns.
-              Thank you.
-            </fo:block>
-           </xsl:when>
-          <xsl:when test="@notify_interval='14 days' and $lid = 'Hines Middle'">
-            <fo:block>
-              SECOND NOTICE (Items still overdue): Library records show the following item(s) remain overdue.
-              Please return or renew them as soon as possible. There are no fines charged.
-              If the book has been misplaced, the replacement cost is listed below and will need to be paid.
-              If you have already returned them, please excuse this notice.
-              Contact Amanda Beaubian at the Hines Middle School Library if you have questions or concerns.
-              Thank you.
-            </fo:block>
-           </xsl:when>
-           <xsl:when test="@notify_interval='21 days' and $lid = 'Hines Middle'">
-            <fo:block>
-              FINAL NOTICE (Items Marked Lost):  Your item(s) listed below have now been
-              marked LOST. You may be blocked from borrowing until this matter is taken care
-              of. The price below will be charged for each lost item.
-              Please contact Amanda Beaubian at the Hines Middle School Library immediately.
-              Thank you.
-            </fo:block>
-           </xsl:when>
-           <!-- end Hines -->
           <xsl:otherwise>
             <fo:block>
               FINAL NOTICE (3 weeks overdue):  This is your final notice to return the item(s) listed
