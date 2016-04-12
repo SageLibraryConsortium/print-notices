@@ -368,7 +368,7 @@
               Please return or renew them as soon as possible. There are no fines charged.
               If the book has been misplaced, the replacement cost is listed below and will need to be paid.
               If you have already returned them, please excuse this notice.
-              Contact Amanda Beaubian at the Hines Middle School Library if you have questions or concerns.
+              Contact Amanda Beaubien at the Hines Middle School Library if you have questions or concerns.
               Thank you.
             </fo:block>
            </xsl:when>
@@ -378,7 +378,7 @@
               Please return or renew them as soon as possible. There are no fines charged.
               If the book has been misplaced, the replacement cost is listed below and will need to be paid.
               If you have already returned them, please excuse this notice.
-              Contact Amanda Beaubian at the Hines Middle School Library if you have questions or concerns.
+              Contact Amanda Beaubien at the Hines Middle School Library if you have questions or concerns.
               Thank you.
             </fo:block>
            </xsl:when>
@@ -387,7 +387,7 @@
               FINAL NOTICE (Items Marked Lost):  Your item(s) listed below have now been
               marked LOST. You may be blocked from borrowing until this matter is taken care
               of. The price below will be charged for each lost item.
-              Please contact Amanda Beaubian at the Hines Middle School Library immediately.
+              Please contact Amanda Beaubien at the Hines Middle School Library immediately.
               Thank you.
             </fo:block>
            </xsl:when>
