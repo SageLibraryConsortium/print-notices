@@ -1,0 +1,98 @@
+#!/bin/bash
+
+#Assign variables
+DATE=$(date +%Y-%m-%d);
+SCRIPT_DIR=/openils/var/web/weekly
+##Directory variables
+WEEKLY_HOLDS_LINK_DIR=reports/weekly_holds
+WEEKLY_CIRC_LINK_DIR=reports/weekly_circ_stats
+WEEKLY_TOP50HOLDS_LINK_DIR=reports/weekly_top50holds
+MONTHLY_HOLDS_LINK_DIR=reports/monthly_holds
+MONTHLY_TRANSITS_LINK_DIR=reports/monthly_old_transits
+MONTHLY_CIRC_LINK_DIR=reports/monthly_circ_stats
+#--#
+WEEKLY_HOLDS_DIR=/openils/var/web/weekly/reports/weekly_holds
+WEEKLY_CIRC_DIR=/openils/var/web/weekly/reports/weekly_circ_stats
+WEEKLY_TOP50HOLDS_DIR=/openils/var/web/weekly/reports/weekly_top50holds
+MONTHLY_HOLDS_DIR=/openils/var/web/weekly/reports/monthly_holds
+MONTHLY_TRANSITS_DIR=/openils/var/web/weekly/reports/monthly_old_transits
+MONTHLY_CIRC_DIR=/openils/var/web/weekly/reports/monthly_circ_stats
+
+rm index.html
+echo "<html><body><center>" >> index.html
+echo "<img src="/opac/images/main_logo.jpg" alt="Evergreen Logo"/>" >> index.html
+echo "<html><body style=\"font-family: Arial, sans-serif;\">" >> index.html
+echo "<h2>Sage - Downloadable Automated Reports</h2>" >> index.html
+echo "<div style=\"margin:auto; text-align:center; border:2px solid green; max-width:100%;\">" >> index.html
+echo "</div>" >> index.html
+echo "</center>" >> index.html
+echo "<h5><li>Weekly Reports are run every Monday for the previous week</li>" >> index.html
+echo "<li>Monthly Reports are run at the first of each month for the previous month</li></h5>" >> index.html
+echo "<center>" >> index.html
+echo "<div style=\"margin:auto; text-align:center; border:2px solid green; max-width:100%;\">" >> index.html
+echo "</div><br/>" >> index.html
+echo "</center>" >> index.html
+##
+##Weekly Holds Fulfillment Reports
+##
+echo "Weekly Holds Fulfillment Reports <br/>" >> index.html
+echo "<ul>" >> index.html
+cd $WEEKLY_HOLDS_DIR
+find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; do echo "<li><a href='$WEEKLY_HOLDS_LINK_DIR/$FILE'>${FILE%%_*} - Weekly Holds Report</a></li>" >> $SCRIPT_DIR/'index'.html
+done
+cd $SCRIPT_DIR
+echo "</ul>" >> index.html
+##
+##Weekly Circ Stats Report
+##
+echo "Weekly Circ Statistics for Sage <br/>" >> index.html
+echo "<ul>" >> index.html
+cd $WEEKLY_CIRC_DIR
+find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; do echo "<li><a href='$WEEKLY_CIRC_LINK_DIR/$FILE'>${FILE%%_*} - Weekly Circulation Statistics Report</a></li>" >> $SCRIPT_DIR/'index'.html
+done
+cd $SCRIPT_DIR
+echo "</ul>" >> index.html
+##
+##Weekly Top 50 Holds Report
+##
+echo "Weekly Top 50 Titles on Hold in Sage <br/>" >> index.html
+echo "<ul>" >> index.html
+cd $WEEKLY_TOP50HOLDS_DIR
+find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; do echo "<li><a href='$WEEKLY_TOP50HOLDS_LINK_DIR/$FILE'>${FILE%%_*} - Weekly Top 50 Titles on Hold Report</a></li>" >> $SCRIPT_DIR/'index'.html
+done
+cd $SCRIPT_DIR
+echo "</ul>" >> index.html
+##
+echo "</br>" >> index.html
+##
+##Monthly Holds Fulfillment Reports
+##
+echo "Monthly Holds Fulfillment Reports <br/>" >> index.html
+echo "<ul>" >> index.html
+cd $MONTHLY_HOLDS_DIR
+find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; do echo "<li><a href='$MONTHLY_HOLDS_LINK_DIR/$FILE'>${FILE%%_*} - Monthly Holds Report</a></li>" >> $SCRIPT_DIR/'index'.html
+done
+cd $SCRIPT_DIR
+echo "</ul>" >> index.html
+##
+##Monthly Long Transits
+##
+echo "Monthly Old Transit Reports (In Transit for 1 month or more) <br/>" >> index.html
+echo "<ul>" >> index.html
+cd $MONTHLY_TRANSITS_DIR
+find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; do echo "<li><a href='$MONTHLY_TRANSITS_LINK_DIR/$FILE'>${FILE%%_*} - Monthly Long Transits Report</a></li>" >> $SCRIPT_DIR/'index'.html 
+done
+cd $SCRIPT_DIR
+echo "</ul>" >> index.html
+##
+##Monthly Circ Stats Report
+##
+echo "Monthly Circ Statistics for Sage <br/>" >> index.html
+echo "<ul>" >> index.html
+cd $MONTHLY_CIRC_DIR
+find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; do echo "<li><a href='$MONTHLY_CIRC_LINK_DIR/$FILE'>${FILE%%_*} - Monthly Circulation Statistics Report</a></li>" >> $SCRIPT_DIR/'index'.html
+done
+cd $SCRIPT_DIR
+echo "</ul>" >> index.html
+## Finish
+echo "</body></html>" >> index.html
