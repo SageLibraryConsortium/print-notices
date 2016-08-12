@@ -34,7 +34,7 @@ $BASEDIR/$FOLDER/$ORG'_monthly_circ_stats_text'.sh > $BASEDIR/$FOLDER/$ORG'_emai
 
 # E-mail out the report
 
-mutt -s "Monthly Sage Circ Statistics for $REPORT_DATE" -a $BASEDIR/$FOLDER/$REPORT_DATE'_'$ORG'_monthly_circ_stats'.xlsx -- $RECIPIENT < $BASEDIR/$FOLDER/$ORG'_email_text_'$REPORT_DATE.txt
+mutt -s "$REPORT_DATE - Monthly Sage Circulation Statistics Report" -a $BASEDIR/$FOLDER/$REPORT_DATE'_'$ORG'_monthly_circ_stats'.xlsx -- $RECIPIENT < $BASEDIR/$FOLDER/$ORG'_email_text_'$REPORT_DATE.txt
 
 # Copy new reports over to web directory
 

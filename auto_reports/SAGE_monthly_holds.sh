@@ -33,7 +33,7 @@ $BASEDIR/$FOLDER/$ORG'_monthly_holds_text'.sh > $BASEDIR/$FOLDER/$ORG'_email_tex
 
 # E-mail out the report
 
-mutt -s "Monthly Holds for $REPORT_DATE" -a $BASEDIR/$FOLDER/$REPORT_DATE'_'$ORG'_monthly_holds'.xlsx -- $RECIPIENT < $BASEDIR/$FOLDER/$ORG'_email_text_'$REPORT_DATE.txt
+mutt -s "$REPORT_DATE - Monthly Sage Holds Fulfillment Report" -a $BASEDIR/$FOLDER/$REPORT_DATE'_'$ORG'_monthly_holds'.xlsx -- $RECIPIENT < $BASEDIR/$FOLDER/$ORG'_email_text_'$REPORT_DATE.txt
 
 # Copy new reports over to web directory
 

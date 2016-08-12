@@ -34,7 +34,7 @@ $BASEDIR/$FOLDER/$ORG'_weekly_holds_text'.sh > $BASEDIR/$FOLDER/$ORG'_email_text
 
 # E-mail out the report
 
-mutt -s "Weekly Holds for $DATE" -a $BASEDIR/$FOLDER/$REPORT_DATE'_'$ORG'_wkly_hlds'.xlsx -- $RECIPIENT < $BASEDIR/$FOLDER/$ORG'_email_text_'$REPORT_DATE.txt
+mutt -s "$REPORT_DATE - Weekly Holds Fulfillment Report" -a $BASEDIR/$FOLDER/$REPORT_DATE'_'$ORG'_wkly_hlds'.xlsx -- $RECIPIENT < $BASEDIR/$FOLDER/$ORG'_email_text_'$REPORT_DATE.txt
 
 # Copy new reports over to web directory
 

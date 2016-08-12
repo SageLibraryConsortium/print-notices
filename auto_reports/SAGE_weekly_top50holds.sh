@@ -33,7 +33,7 @@ $BASEDIR/$FOLDER/$ORG'_weekly_top50holds_text'.sh > $BASEDIR/$FOLDER/$ORG'_email
 
 # E-mail out the report
 
-mutt -s "Top 50 Holds in Sage for $DATE" -a $BASEDIR/$FOLDER/$DATE'_'$ORG'_weekly_top50holds'.xlsx -- $RECIPIENT < $BASEDIR/$FOLDER/$ORG'_email_text_'$DATE.txt
+mutt -s "$DATE - Top 50 Holds in Sage Report" -a $BASEDIR/$FOLDER/$DATE'_'$ORG'_weekly_top50holds'.xlsx -- $RECIPIENT < $BASEDIR/$FOLDER/$ORG'_email_text_'$DATE.txt
 
 # Copy new reports over to web directory
 
