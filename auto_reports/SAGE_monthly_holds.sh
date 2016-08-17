@@ -20,7 +20,7 @@ psql -U evergreen -h db -f $BASEDIR/$FOLDER/$ORG'_monthly_holds'.sql evergreen
 
 # Insert Title at beginning and Delete the last line from the csv (number of rows)
 
-sed -e '1 i Holds Report for the month of '$REPORT_DATE'|' -e '1 i \ |' -e '$d' $BASEDIR/$FOLDER/$ORG'_monthly_holds2'.csv > $BASEDIR/$FOLDER/$ORG'_monthly_holds'.csv
+sed -e '1 i Monthly Holds Report for the month of '$REPORT_DATE'|' -e '1 i \ |' -e '$d' $BASEDIR/$FOLDER/$ORG'_monthly_holds2'.csv > $BASEDIR/$FOLDER/$ORG'_monthly_holds'.csv
 rm $BASEDIR/$FOLDER/$ORG'_monthly_holds2'.csv
 
 # Convert csv to xls

@@ -20,7 +20,7 @@ psql -U evergreen -h db -f $BASEDIR/$FOLDER/$ORG'_weekly_holds'.sql evergreen
 
 # Insert Title at beginning and Delete the last line from the csv (number of rows)
 
-sed -e '1 i Holds Report for '$REPORT_DATE'|' -e '1 i \ |' -e '$d' $BASEDIR/$FOLDER/$ORG'_wkly_hlds2'.csv > $BASEDIR/$FOLDER/$ORG'_wkly_hlds'.csv
+sed -e '1 i Weekly Holds Report for week starting on '$REPORT_DATE'|' -e '1 i \ |' -e '$d' $BASEDIR/$FOLDER/$ORG'_wkly_hlds2'.csv > $BASEDIR/$FOLDER/$ORG'_wkly_hlds'.csv
 
 rm $BASEDIR/$FOLDER/$ORG'_wkly_hlds2'.csv
 

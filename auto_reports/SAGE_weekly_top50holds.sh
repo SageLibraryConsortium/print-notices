@@ -19,7 +19,7 @@ psql -U evergreen -h db -f $BASEDIR/$FOLDER/$ORG'_weekly_top50holds'.sql evergre
 
 # Insert Title at beginning and Delete the last line from the csv (number of rows)
 
-sed -e '1 i Top 50 Holds in Sage for '$DATE'|' -e '1 i \ |' -e '$d' $BASEDIR/$FOLDER/$ORG'_weekly_top50holds2'.csv > $BASEDIR/$FOLDER/$ORG'_weekly_top50holds'.csv
+sed -e '1 i Top 50 Holds in Sage as of '$DATE'|' -e '1 i \ |' -e '$d' $BASEDIR/$FOLDER/$ORG'_weekly_top50holds2'.csv > $BASEDIR/$FOLDER/$ORG'_weekly_top50holds'.csv
 
 rm $BASEDIR/$FOLDER/$ORG'_weekly_top50holds2'.csv
 

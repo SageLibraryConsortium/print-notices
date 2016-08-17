@@ -20,7 +20,7 @@ psql -U evergreen -h db -f $BASEDIR/$FOLDER/$ORG'_monthly_circ_stats'.sql evergr
 
 # Insert Title at beginning and Delete the last line from the csv (number of rows)
 
-sed -e '1 i Monthly Circ Reports in Sage for '$REPORT_DATE'|' -e '1 i \ |' -e '$d' $BASEDIR/$FOLDER/$ORG'_monthly_circ_stats2'.csv > $BASEDIR/$FOLDER/$ORG'_monthly_circ_stats'.csv
+sed -e '1 i Monthly Circ Report for the month of '$REPORT_DATE'|' -e '1 i \ |' -e '$d' $BASEDIR/$FOLDER/$ORG'_monthly_circ_stats2'.csv > $BASEDIR/$FOLDER/$ORG'_monthly_circ_stats'.csv
 
 rm $BASEDIR/$FOLDER/$ORG'_monthly_circ_stats2'.csv
 
