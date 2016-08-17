@@ -10,6 +10,7 @@ WEEKLY_TOP50HOLDS_LINK_DIR=reports/weekly_top50holds
 MONTHLY_HOLDS_LINK_DIR=reports/monthly_holds
 MONTHLY_TRANSITS_LINK_DIR=reports/monthly_old_transits
 MONTHLY_CIRC_LINK_DIR=reports/monthly_circ_stats
+MONTHLY_USERS_ADDED_LINK_DIR=reports/monthly_users_added
 #--#
 WEEKLY_HOLDS_DIR=/openils/var/web/weekly/reports/weekly_holds
 WEEKLY_CIRC_DIR=/openils/var/web/weekly/reports/weekly_circ_stats
@@ -17,6 +18,7 @@ WEEKLY_TOP50HOLDS_DIR=/openils/var/web/weekly/reports/weekly_top50holds
 MONTHLY_HOLDS_DIR=/openils/var/web/weekly/reports/monthly_holds
 MONTHLY_TRANSITS_DIR=/openils/var/web/weekly/reports/monthly_old_transits
 MONTHLY_CIRC_DIR=/openils/var/web/weekly/reports/monthly_circ_stats
+MONTHLY_USERS_ADDED_DIR=/openils/var/web/weekly/reports/monthly_users_added
 
 rm index.html
 
@@ -26,15 +28,17 @@ echo "<head> <meta charset='utf-8'><title>Sage Automated Reports</title> \
 <meta name='viewport' content='width=device-width, initial-scale=1'> \
 <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> </head>" >> index.html
 echo "<body><center>" >> index.html
-echo "<img src='/opac/images/main_logo.jpg' alt='Evergreen Logo' style='max-width:100%;'/>" >> index.html
-echo "<html><body style=\"font-family: Arial, sans-serif;\">" >> index.html
-echo "<h2 style=\"font-family:'Roboto Slab', Helvetica Neue;\">Sage - Downloadable Automated Reports</h2>" >> index.html
+echo "<img src='/opac/images/sage_logo_clear.png' alt='Sage Logo' style='max-width:100%;'/>" >> index.html
+echo "<html><body style=\"font-family: Arial, sans-serif; background-color:#fff\">" >> index.html
+echo "<h2 style=\"font-family:'Roboto Slab', Helvetica Neue;\">Downloadable Automated Reports</h2>" >> index.html
 echo "</center>" >> index.html
 echo "<div style=\"margin:auto; text-align:center; border:2px solid green; max-width:100%;\">" >> index.html
 echo "</div>" >> index.html
 echo "<h5><li>Weekly Reports are run every Monday for the previous week.</li>" >> index.html
 echo "<li>Monthly Reports are run at the first of each month for the previous month.</li>" >> index.html
-echo "<li>The Top 50 Holds Report is run once a week and represents the top 50 holds as of that day.</li></h5>" >> index.html
+echo "<li>The Top 50 Holds Report is run once a week and represents the top 50 holds as of that day.</li>" >> index.html
+echo "<li>For other online reporting needs, please login to \
+<a href='https://catalog.sage.eou.edu/quick-reports'>Quick Reports</a></li></h5>" >> index.html
 echo "<div style=\"margin:auto; text-align:center; border:2px solid green; max-width:100%;\">" >> index.html
 echo "</div><br/>" >> index.html
 ##
@@ -108,6 +112,18 @@ echo "<ul>" >> index.html
 cd $MONTHLY_TRANSITS_DIR
 find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; \
 do echo "<li><a href='$MONTHLY_TRANSITS_LINK_DIR/$FILE'>${FILE%%_*} - Monthly Long Transits Report</a></li>" \
+>> $SCRIPT_DIR/'index'.html
+done
+cd $SCRIPT_DIR
+echo "</ul>" >> index.html
+##
+##Monthly Users Added
+##
+echo "<div style=\"font-family: 'Roboto Slab', Helvetica Neue, Arial;\">Monthly Users Added Reports</div>" >> index.html
+echo "<ul>" >> index.html
+cd $MONTHLY_USERS_ADDED_DIR
+find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; \
+do echo "<li><a href='$MONTHLY_USERS_ADDED_LINK_DIR/$FILE'>${FILE%%_*} - Monthly Users Added Report</a></li>" \
 >> $SCRIPT_DIR/'index'.html
 done
 cd $SCRIPT_DIR

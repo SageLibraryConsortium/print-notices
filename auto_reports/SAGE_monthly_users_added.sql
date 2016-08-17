@@ -1,4 +1,4 @@
-- Simple Users Added Per Month
+-- Simple Users Added Per Month
 \o /home/opensrf/scripts/auto_reports/SAGE_monthly_users_added2.csv
 \a
 \f |
