@@ -23,22 +23,24 @@ rm index.html
 echo "<!doctype html><html lang='en'>" >> index.html
 echo "<head> <meta charset='utf-8'><title>Sage Automated Reports</title> \
 <meta name='description' content='Sage Downloadable Excel Reports'> \
-<meta name='viewport' content='width=device-width, initial-scale=1'></head>" >> index.html
+<meta name='viewport' content='width=device-width, initial-scale=1'> \
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> </head>" >> index.html
 echo "<body><center>" >> index.html
 echo "<img src='/opac/images/main_logo.jpg' alt='Evergreen Logo' style='max-width:100%;'/>" >> index.html
 echo "<html><body style=\"font-family: Arial, sans-serif;\">" >> index.html
-echo "<h2>Sage - Downloadable Automated Reports</h2>" >> index.html
+echo "<h2 style=\"font-family:'Roboto Slab', Helvetica Neue;\">Sage - Downloadable Automated Reports</h2>" >> index.html
 echo "</center>" >> index.html
 echo "<div style=\"margin:auto; text-align:center; border:2px solid green; max-width:100%;\">" >> index.html
 echo "</div>" >> index.html
-echo "<h5><li>Weekly Reports are run every Monday for the previous week</li>" >> index.html
-echo "<li>Monthly Reports are run at the first of each month for the previous month</li></h5>" >> index.html
+echo "<h5><li>Weekly Reports are run every Monday for the previous week.</li>" >> index.html
+echo "<li>Monthly Reports are run at the first of each month for the previous month.</li>" >> index.html
+echo "<li>The Top 50 Holds Report is run once a week and represents the top 50 holds as of that day.</li></h5>" >> index.html
 echo "<div style=\"margin:auto; text-align:center; border:2px solid green; max-width:100%;\">" >> index.html
 echo "</div><br/>" >> index.html
 ##
 ##Weekly Holds Fulfillment Reports
 ##
-echo "Weekly Holds Fulfillment Reports <br/>" >> index.html
+echo "<div style=\"font-family: 'Roboto Slab', Helvetica Neue, Arial;\">Weekly Holds Fulfillment Reports</div>" >> index.html
 echo "<ul>" >> index.html
 cd $WEEKLY_HOLDS_DIR
 find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; \
@@ -50,7 +52,7 @@ echo "</ul>" >> index.html
 ##
 ##Weekly Circ Stats Report
 ##
-echo "Weekly Circ Statistics for Sage <br/>" >> index.html
+echo "<div style=\"font-family: 'Roboto Slab', Helvetica Neue, Arial;\">Weekly Circ Statistics for Sage</div>" >> index.html
 echo "<ul>" >> index.html
 cd $WEEKLY_CIRC_DIR
 find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; \
@@ -62,7 +64,7 @@ echo "</ul>" >> index.html
 ##
 ##Weekly Top 50 Holds Report
 ##
-echo "Weekly Top 50 Titles on Hold in Sage <br/>" >> index.html
+echo "<div style=\"font-family: 'Roboto Slab', Helvetica Neue, Arial;\">Weekly Top 50 Titles on Hold in Sage</div>" >> index.html
 echo "<ul>" >> index.html
 cd $WEEKLY_TOP50HOLDS_DIR
 find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; \
@@ -77,7 +79,7 @@ echo "</br>" >> index.html
 ##
 ##Monthly Holds Fulfillment Reports
 ##
-echo "Monthly Holds Fulfillment Reports <br/>" >> index.html
+echo "<div style=\"font-family: 'Roboto Slab', Helvetica Neue, Arial;\">Monthly Holds Fulfillment Reports</div>" >> index.html
 echo "<ul>" >> index.html
 cd $MONTHLY_HOLDS_DIR
 find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; \
@@ -89,7 +91,7 @@ echo "</ul>" >> index.html
 ##
 ##Monthly Circ Stats Report
 ##
-echo "Monthly Circ Statistics for Sage <br/>" >> index.html
+echo "<div style=\"font-family: 'Roboto Slab', Helvetica Neue, Arial;\">Monthly Circ Statistics for Sage</div>" >> index.html
 echo "<ul>" >> index.html
 cd $MONTHLY_CIRC_DIR
 find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; \
@@ -101,7 +103,7 @@ echo "</ul>" >> index.html
 ##
 ##Monthly Long Transits
 ##
-echo "Monthly Old Transit Reports (In Transit for 1 month or more) <br/>" >> index.html
+echo "<div style=\"font-family: 'Roboto Slab', Helvetica Neue, Arial;\">Monthly Old Transit Reports (In Transit for 1 month or more)</div>" >> index.html
 echo "<ul>" >> index.html
 cd $MONTHLY_TRANSITS_DIR
 find . -name \*xlsx -printf %P\\n | sort -r | while read FILE ; \
