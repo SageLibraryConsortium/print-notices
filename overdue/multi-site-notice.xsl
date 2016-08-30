@@ -29,6 +29,18 @@
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
+     <!--Hermiston Public Library Gets Notices For Email/No Email Patrons at 21 days-->
+      <xsl:if test="(location/shortname = 'um-hpl')">
+        <xsl:if test="@notify_interval = '21 days'">
+          <xsl:call-template name="notice_template"/>
+        </xsl:if>
+      </xsl:if>
+      <xsl:if test="patron/email = '' and (location/shortname = 'um-hpl')">
+        <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days'">
+          <xsl:call-template name="notice_template"/>
+        </xsl:if>
+      </xsl:if>
+      <!--end Hermiston -->
       <xsl:if test="patron/email = '' and (location/shortname = 'hr-hrhs')">
         <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '30 days'">
           <xsl:call-template name="notice_template"/>
@@ -49,7 +61,7 @@
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
-      <xsl:if test="patron/email = '' and not(location/shortname = 'hr-hrhs' or location/shortname = 'hr-cll' or location/shortname = 'hr-hrcl' or location/shortname = 'hr-pcl' or location/shortname = 'sc-scps' or location/shortname = 'wc-dalles' or location/shortname = 'wc-dufur' or location/shortname = 'wc-plane' or location/shortname = 'wc-swcl' or location/shortname = 'um-mf')">
+      <xsl:if test="patron/email = '' and not(location/shortname = 'hr-hrhs' or location/shortname = 'hr-cll' or location/shortname = 'hr-hrcl' or location/shortname = 'hr-pcl' or location/shortname = 'sc-scps' or location/shortname = 'wc-dalles' or location/shortname = 'wc-dufur' or location/shortname = 'wc-plane' or location/shortname = 'wc-swcl' or location/shortname = 'um-hpl' or location/shortname = 'um-mf')">
         <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
