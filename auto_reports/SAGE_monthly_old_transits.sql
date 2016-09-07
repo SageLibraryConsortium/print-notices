@@ -15,6 +15,7 @@ acnp.label||' '||
 acn.label as "Call Number",
 acl.name as "Shelving Location",
 acp.circ_modifier AS "Circ Modifier",
+case when ahtc.id=atc.id then 'Hold' else 'Copy' end as "Transit Type",
 bmp.label as "[If Exists] Part Name"
 from action.transit_copy atc
 join config.copy_status acs on (acs.id=atc.copy_status)
@@ -28,10 +29,11 @@ join asset.call_number acn on (acp.call_number=acn.id)
 left outer join asset.call_number_prefix acnp on (acnp.id=acn.prefix)
 left outer join asset.copy_part_map acpm on (acpm.target_copy=acp.id)
 left outer join biblio.monograph_part bmp on (bmp.id=acpm.part)
+left outer join action.hold_transit_copy ahtc on (ahtc.id=atc.id)
 join reporter.super_simple_record rssr on (acn.record=rssr.id)
 where 
-source_send_time <= now()-'1 month'::interval
-and dest_recv_time is null
+atc.source_send_time <= now()-'1 month'::interval
+and atc.dest_recv_time is null
 order by atc.source, atc.source_send_time, atc.dest
 ;
 \o
