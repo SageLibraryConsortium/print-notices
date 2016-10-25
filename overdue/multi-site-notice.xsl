@@ -23,12 +23,18 @@
   <xsl:template match="notice">
     <xsl:if test="location/name[contains(text(), $lid)]"> 
 
-     <!--Milton Freewater Gets Notices For Email/No Email Patrons -->
+     <!--Milton Freewater/ Email/No Email Patrons -->
       <xsl:if test="(location/shortname = 'um-mf')">
         <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days' or @notify_interval = '30 days' or @notify_interval = '60 days' or @notify_interval = '90 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
+     <!--Harney County Schools Email/No Email Patrons -->
+      <xsl:if test="(location/shortname = 'hc-se' or location/shortname = 'hc-hms')">
+        <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days'">
+          <xsl:call-template name="notice_template"/>
+        </xsl:if>
+      </xsl:if>    
      <!--Hermiston Public Library Gets Notices For Email/No Email Patrons at 21 days-->
       <xsl:if test="(location/shortname = 'um-hpl')">
         <xsl:if test="@notify_interval = '21 days'">
@@ -380,7 +386,7 @@
               Please return or renew them as soon as possible. There are no fines charged.
               If the book has been misplaced, the replacement cost is listed below and will need to be paid.
               If you have already returned them, please excuse this notice.
-              Contact Amanda Beaubien at the Slater Elementary School Library if you have questions or concerns.
+              Contact the Slater Elementary School Library if you have questions or concerns.
               Thank you.
             </fo:block>
            </xsl:when>
@@ -399,7 +405,7 @@
               FINAL NOTICE (Items Marked Lost):  Your item(s) listed below have now been
               marked LOST. You may be blocked from borrowing until this matter is taken care
               of. The price below will be charged for each lost item.
-              Please contact Amanda Beaubien at the Slater Elementary School Library immediately.
+              Please contact the Slater Elementary School Library immediately.
               Thank you.
             </fo:block>
            </xsl:when>             
