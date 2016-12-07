@@ -22,10 +22,15 @@
  
   <xsl:template match="notice">
     <xsl:if test="location/name[contains(text(), $lid)]"> 
-
      <!--Milton Freewater/ Email/No Email Patrons -->
       <xsl:if test="(location/shortname = 'um-mf')">
         <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days' or @notify_interval = '30 days' or @notify_interval = '60 days' or @notify_interval = '90 days'">
+          <xsl:call-template name="notice_template"/>
+        </xsl:if>
+      </xsl:if>
+     <!--Nyssa/ Email/No Email Patrons 3/14/28/60-->
+      <xsl:if test="(location/shortname = 'mc-nyssa')">
+        <xsl:if test="@notify_interval = '3 days' or @notify_interval = '14 days' or @notify_interval = '28 days' or @notify_interval = '60 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
@@ -150,6 +155,44 @@
 
         <!-- ##### VARIABLE LATENESS MESSAGE ######################### -->
         <xsl:choose>
+             <!-- Nyssa 3/14/28/60 Days-->
+          <xsl:when test="@notify_interval='3 days' and location/shortname='mc-nyssa'">
+            <fo:block>
+              FIRST NOTICE (3 days overdue):  Library records show the following item(s) overdue.
+              Please return or renew them by contacting library staff or accessing your online
+              account at https://catalog.sage.eou.edu as soon as possible to avoid further charges.
+              If you have already returned them, please excuse this notice.
+              
+              Thank you.
+            </fo:block>
+           </xsl:when>
+            <xsl:when test="@notify_interval='14 days' and location/shortname='mc-nyssa'">
+            <fo:block>
+              SECOND NOTICE (2 weeks overdue):  Library records still show the following item(s) overdue.
+              Please return them as soon as possible to avoid being billed for replacement costs. 
+              
+              Thank you.
+            </fo:block>
+           </xsl:when>
+           <xsl:when test="@notify_interval='28 days' and location/shortname='mc-nyssa'">
+            <fo:block>
+              NEXT TO FINAL NOTICE (4 weeks overdue): This is your final notice to return the item(s) listed
+              below.  You and any patrons living at this residence may be blocked from borrowing
+              and lose library privelages until this matter is taken care of.
+                 
+              Please contact the owning library immediately.  Thank you.
+            </fo:block>
+           </xsl:when>
+           <xsl:when test="@notify_interval='60 days' and location/shortname='mc-nyssa'">
+            <fo:block>
+              FINAL NOTICE (60 Days Overdue) We really miss both our items and your visits! It would be so helpful
+              if you would either contact us about your situation, or return your checkout(s) before they are counted as lost.
+              These items will move to LOST status in 30 days if they are not returned.
+              Please contact us to resolve this situation.
+              
+              Thank you.
+            </fo:block>
+           </xsl:when>
           <!-- Milton Freewater -->
           <xsl:when test="@notify_interval='7 days' and location/shortname='um-mf'">
             <fo:block>
