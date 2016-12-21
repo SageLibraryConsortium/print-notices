@@ -34,12 +34,14 @@
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
-     <!--Harney County Schools Email/No Email Patrons -->
-      <xsl:if test="(location/shortname = 'hc-se' or location/shortname = 'hc-hms')">
+     <!--Harney County Schools Patrons -->
+     <xsl:if test="patron/email = '' and (location/shortname = 'hc-hms' or location/shortname = 'hc-se')">
+      <xsl:if test="(location/shortname = 'hc-hms' or location/shortname = 'hc-se')">
         <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
-      </xsl:if>    
+      </xsl:if>
+     </xsl:if>
      <!--Hermiston Public Library Gets Notices For Email/No Email Patrons at 21 days-->
       <xsl:if test="(location/shortname = 'um-hpl')">
         <xsl:if test="@notify_interval = '21 days'">
@@ -78,8 +80,6 @@
         </xsl:if>
       </xsl:if>
      </xsl:if>
-
-
   </xsl:template>
  
   <xsl:template name="notice_template">
