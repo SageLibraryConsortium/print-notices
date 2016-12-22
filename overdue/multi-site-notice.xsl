@@ -165,7 +165,7 @@
             <fo:block>
               FIRST NOTICE (2 days overdue):  Library records show the following item(s) overdue.
               Please return or renew them by contacting library staff or accessing your online
-              account at https://catalog.sage.eou.edu as soon as possible to avoid further charges.
+              account at https://catalog.sage.eou.edu as soon as possible to avoid charges.
               If you have already returned them, please excuse this notice.
               
               Thank you.
@@ -181,7 +181,7 @@
            </xsl:when>
            <xsl:when test="@notify_interval='28 days' and location/shortname='mc-nyssa'">
             <fo:block>
-              THIRD NOTICE (4 weeks overdue): This is your final notice to return the item(s) listed
+              THIRD NOTICE (4 weeks overdue): This is your third notice to return the item(s) listed
               below.  You and any patrons living at this residence may be blocked from borrowing
               and lose library privileges until this matter is taken care of.
                  
