@@ -79,7 +79,7 @@
                     or location/shortname = 'hr-hrcl' or location/shortname = 'hr-pcl' or location/shortname = 'sc-scps'
                     or location/shortname = 'wc-dalles' or location/shortname = 'wc-dufur' or location/shortname = 'wc-plane'
                     or location/shortname = 'wc-swcl' or location/shortname = 'um-hpl' or location/shortname = 'um-mf'
-                    or location/shortname = 'hc-se' or location/shortname = 'hc-hms')">
+                    or location/shortname = 'hc-se' or location/shortname = 'hc-hms' or location/shortname = 'mc-nyssa')">
         <xsl:if test="@notify_interval = '7 days' or @notify_interval = '14 days' or @notify_interval = '21 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
