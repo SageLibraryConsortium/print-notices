@@ -191,9 +191,9 @@
            <xsl:when test="@notify_interval='60 days' and location/shortname='mc-nyssa'">
             <fo:block>
               FINAL NOTICE (60 Days Overdue) We really miss both our items and your visits! It would be so helpful
-              if you would either contact us about your situation, or return your checkout(s) before they are counted as lost.
-              These items will move to LOST status in 30 days if they are not returned.
-              Please contact us to resolve this situation.
+              if you would either contact us about your situation, or return your checkout(s).
+              You will be billed for the replacement price(s) below, plus a $10.00 per item processing fee per item,
+              in 30 days, unless this situation is resolved.
               
               Thank you.
             </fo:block>
