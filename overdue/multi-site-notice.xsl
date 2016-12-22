@@ -192,7 +192,7 @@
             <fo:block>
               FINAL NOTICE (60 Days Overdue) We really miss both our items and your visits! It would be so helpful
               if you would either contact us about your situation, or return your checkout(s).
-              You will be billed for the replacement price(s) below, plus a $10.00 per item processing fee per item,
+              You will be billed for the replacement price(s) below, plus a $10.00 processing fee per item,
               in 30 days, unless this situation is resolved.
               
               Thank you.
