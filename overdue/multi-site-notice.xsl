@@ -30,7 +30,7 @@
       </xsl:if>
      <!--Nyssa/ Email/No Email Patrons 3/14/28/60-->
       <xsl:if test="(location/shortname = 'mc-nyssa')">
-        <xsl:if test="@notify_interval = '3 days' or @notify_interval = '14 days' or @notify_interval = '28 days' or @notify_interval = '60 days'">
+        <xsl:if test="@notify_interval = '2 days' or @notify_interval = '14 days' or @notify_interval = '28 days' or @notify_interval = '60 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
@@ -160,10 +160,10 @@
 
         <!-- ##### VARIABLE LATENESS MESSAGE ######################### -->
         <xsl:choose>
-             <!-- Nyssa 3/14/28/60 Days-->
-          <xsl:when test="@notify_interval='3 days' and location/shortname='mc-nyssa'">
+             <!-- Nyssa 2/14/28/60 Days-->
+          <xsl:when test="@notify_interval='2 days' and location/shortname='mc-nyssa'">
             <fo:block>
-              FIRST NOTICE (3 days overdue):  Library records show the following item(s) overdue.
+              FIRST NOTICE (2 days overdue):  Library records show the following item(s) overdue.
               Please return or renew them by contacting library staff or accessing your online
               account at https://catalog.sage.eou.edu as soon as possible to avoid further charges.
               If you have already returned them, please excuse this notice.
@@ -181,9 +181,9 @@
            </xsl:when>
            <xsl:when test="@notify_interval='28 days' and location/shortname='mc-nyssa'">
             <fo:block>
-              NEXT TO FINAL NOTICE (4 weeks overdue): This is your final notice to return the item(s) listed
+              THIRD NOTICE (4 weeks overdue): This is your final notice to return the item(s) listed
               below.  You and any patrons living at this residence may be blocked from borrowing
-              and lose library privelages until this matter is taken care of.
+              and lose library privileges until this matter is taken care of.
                  
               Please contact the owning library immediately.  Thank you.
             </fo:block>
