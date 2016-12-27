@@ -28,8 +28,8 @@
           <xsl:call-template name="notice_template"/>
         </xsl:if>
       </xsl:if>
-     <!--Nyssa/ Email/No Email Patrons 3/14/28/60-->
-      <xsl:if test="(location/shortname = 'mc-nyssa')">
+     <!--Nyssa Patrons 2/14/28/60-->
+     <xsl:if test="patron/email = '' and (location/shortname = 'mc-nyssa')">
         <xsl:if test="@notify_interval = '2 days' or @notify_interval = '14 days' or @notify_interval = '28 days' or @notify_interval = '60 days'">
           <xsl:call-template name="notice_template"/>
         </xsl:if>
